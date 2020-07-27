@@ -1,0 +1,32 @@
+@model Animals.Models.GetAllAnimalViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Animals</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Animal Name</th>
+        <th>Type</th>
+        <th>Home</th>
+        @*<th>Actions</th>*@
+    </tr>
+    @foreach (var animal in Model.Animals)
+    {
+        <tr>
+            <td>@animal.Id</td>
+            <td>@animal.Name</td>
+            <td>@animal.Type</td>
+            <td>@animal.Home.Name</td>
+            @*<td>
+                <a class="btn btn-success" href="/BookStore/EditBook/@animal.Id">Edit</a>
+                <a class="btn btn-danger" href="/BookStore/Delete/@animal.Id">Delete</a>
+                @Html.ActionLink("Remove", "Delete", new {id = book.Id})
+            </td>*@
+        </tr>
+    }
+</table>
