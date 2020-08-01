@@ -1,26 +1,30 @@
-@model Animals.Models.GetAllAnimalViewModel
+@model Animals.Models.AllElementsViewModel
 
 @{
     ViewBag.Title = "title";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section scripts {
+    <script>
+        jQuery(document).ready(function(){
+            var theme = $('a.theme');
+            var $body = $('body');
+
+            theme.on('click', function(){
+                if(!$body.hasClass('dark')) {
+                    $body.addClass('dark');
+                    theme.text('White theme');
+                } else {
+                    $body.removeClass('dark');
+                    theme.text('Dark theme');
+                }
+            	return false;
+            });
+        });
+    </script>
+}
+
 <h2>Animals</h2>
 
-<table class="table table-striped">
-    <tr>
-        <th>Id</th>
-        <th>Animal Name</th>
-        <th>Type</th>
-        <th>Home</th>
-    </tr>
-    @foreach (var animal in Model.Animals)
-    {
-        <tr>
-            <td>@animal.Id</td>
-            <td>@animal.Name</td>
-            <td>@animal.Type</td>
-            <td>@animal.Home.Name</td>
-        </tr>
-    }
-</table>
+@Html.Partial("Partial", Model)

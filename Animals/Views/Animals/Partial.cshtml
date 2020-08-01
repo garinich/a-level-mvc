@@ -1,0 +1,15 @@
+@model Animals.Models.AllElementsViewModel
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var home in Model.Elements)
+    {
+        <tr>
+            <td>@home.Id</td>
+            <td>@home.Name</td>
+        </tr>
+    }
+</table>

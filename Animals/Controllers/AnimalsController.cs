@@ -20,6 +20,9 @@ namespace Animals.Controllers
 
             var conf = new MapperConfiguration(cfg =>
             {
+                cfg.CreateMap<AnimalModel, ElementViewModel>();
+                cfg.CreateMap<HomeModel, ElementViewModel>();
+
                 cfg.CreateMap<AnimalModel, AnimalViewModel>();
                 cfg.CreateMap<HomeModel, HomeViewModel>();
 
@@ -34,8 +37,8 @@ namespace Animals.Controllers
         public ActionResult Index()
         {
             var animals = _animalsManager.GetAllAnimals();
-            var animalsMap = _mapper.Map<IList<AnimalViewModel>>(animals);
-            var result = new GetAllAnimalViewModel {Animals = animalsMap};
+            var animalsMap = _mapper.Map<IList<ElementViewModel>>(animals);
+            var result = new AllElementsViewModel {Elements = animalsMap};
             return View(result);
         }
 
@@ -43,9 +46,14 @@ namespace Animals.Controllers
         public ActionResult Homes()
         {
             var homes = _homesManager.GetAllHomes();
-            var homesMap = _mapper.Map<IList<HomeViewModel>>(homes);
-            var result = new GetAllHomeViewModel {Homes = homesMap};
+            var homesMap = _mapper.Map<IList<ElementViewModel>>(homes);
+            var result = new AllElementsViewModel {Elements = homesMap};
             return View(result);
+        }
+
+        public ActionResult Partial()
+        {
+            return PartialView();
         }
     }
 }

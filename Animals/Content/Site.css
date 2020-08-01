@@ -22,3 +22,21 @@ select,
 textarea {
     max-width: 280px;
 }
+.theme {
+    float: right;
+    margin: 8px 0 0;
+}
+.dark .navbar-inverse .navbar-brand,
+.dark .navbar-inverse .navbar-nav > li > a{
+    color: #222;
+}
+.dark .navbar-inverse {
+    background-color: #9d9d9d
+}
+.dark {
+    background: #333;
+    color: #fff;
+}
+.dark .table-striped > tbody > tr:nth-of-type(odd) {
+    background: #444;
+}
