@@ -12,7 +12,6 @@
         <th>Id</th>
         <th>Home Name</th>
         <th>Animals</th>
-        @*<th>Actions</th>*@
     </tr>
     @foreach (var home in Model.Homes)
     {
@@ -27,11 +26,6 @@
                     }
                 </ol>
             </td>
-            @*<td>
-                <a class="btn btn-success" href="/BookStore/EditBook/@animal.Id">Edit</a>
-                <a class="btn btn-danger" href="/BookStore/Delete/@animal.Id">Delete</a>
-                @Html.ActionLink("Remove", "Delete", new {id = book.Id})
-            </td>*@
         </tr>
     }
 </table>
