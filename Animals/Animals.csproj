@@ -163,10 +163,11 @@
         <Content Include="Scripts\jquery.validate.min.js" />
         <Content Include="Scripts\jquery.validate.unobtrusive.js" />
         <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+        <Content Include="Scripts\main.js" />
         <Content Include="Scripts\modernizr-2.8.3.js" />
         <Content Include="Views\Animals\Homes.cshtml" />
         <Content Include="Views\Animals\Index.cshtml" />
-        <Content Include="Views\Animals\Partial.cshtml" />
+        <Content Include="Views\Shared\TableContent.cshtml" />
         <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>

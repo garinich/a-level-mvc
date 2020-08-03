@@ -51,7 +51,7 @@ namespace Animals.Controllers
             return View(result);
         }
 
-        public ActionResult Partial()
+        public ActionResult TableContent()
         {
             return PartialView();
         }
